@@ -1,0 +1,5 @@
+Experiment,Accuracy,Improvement over baseline
+Baseline GMM (13-dim),0.688,0.0
+Enhanced GMM (28-dim),0.928,0.24
+MLP on 13-dim,0.768,
+MLP on 28-dim,0.868,
