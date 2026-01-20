@@ -1,6 +1,6 @@
 # Voice Deepfake Detector
 
-Minimal project to classify real vs fake speech using log-mel spectrograms and a compact CNN.
+Project to classify real vs fake speech using log-mel CNNs, wav2vec2 embeddings, pretrained HF detectors, and a real-time demo.
 
 ## Setup
 
