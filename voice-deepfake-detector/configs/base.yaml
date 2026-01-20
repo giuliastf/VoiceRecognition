@@ -1,0 +1,65 @@
+project:
+  name: voice-deepfake-detector
+  seed: 42
+
+paths:
+  data_dir: data
+  manifests_dir: data/manifests
+  cache_dir: data/cache/mels
+  runs_dir: runs
+
+dataset:
+  name: ajaykarthick/wavefake-audio
+  streaming: false
+  real_label: R
+  fake_labels: [WF1, WF2, WF3, WF4, WF5, WF6, WF7]
+  audio_column: audio
+  audio_id_column: audio_id
+  class_column: real_or_fake
+  sample_rate: 16000
+  clip_seconds: 4
+
+features:
+  n_mels: 64
+  n_fft: 1024
+  hop_length: 256
+
+model:
+  channels: [16, 32, 64, 128, 256]
+  dropout: 0.2
+
+augment:
+  enabled: false
+  noise_std: 0.005
+  gain_min: 0.8
+  gain_max: 1.2
+
+embeddings:
+  model_name: facebook/wav2vec2-base
+  batch_size: 8
+  max_train_samples: 20000
+  max_val_samples: 4000
+  max_test_samples: null
+
+splits:
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  crossgen_train_generators: [WF1, WF2, WF3, WF4, WF5]
+  crossgen_test_generators: [WF6, WF7]
+  use_streaming: false
+  max_audio_ids: null
+
+training:
+  batch_size: 32
+  epochs: 2
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  max_train_samples_per_epoch: 1000
+  max_val_samples: 200
+  num_workers: 0
+  early_stopping_patience: 1
+
+logging:
+  log_every_steps: 50
+  save_confusion_matrix: true

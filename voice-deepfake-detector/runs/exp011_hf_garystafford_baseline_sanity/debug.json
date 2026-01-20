@@ -1,0 +1,13 @@
+{
+  "expected_sample_rate": 16000,
+  "num_samples": 500,
+  "label_distribution": {
+    "real": 62,
+    "fake": 438
+  },
+  "prediction_distribution": {
+    "real": 500,
+    "fake": 0
+  },
+  "mean_fake_score": 0.0016039315350353718
+}

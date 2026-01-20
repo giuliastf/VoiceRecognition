@@ -1,0 +1,15 @@
+extends: ../base.yaml
+
+experiment:
+  name: exp008_embed_crossgen
+  split: crossgen
+
+cache:
+  enabled: false
+
+embeddings:
+  model_name: facebook/wav2vec2-base
+  batch_size: 8
+  max_train_samples: 20000
+  max_val_samples: 4000
+  max_test_samples: null

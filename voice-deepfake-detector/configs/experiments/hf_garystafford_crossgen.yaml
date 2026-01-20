@@ -1,0 +1,15 @@
+extends: ../base.yaml
+
+experiment:
+  name: exp010_hf_garystafford_crossgen
+  split: crossgen
+
+cache:
+  enabled: false
+
+hf_model:
+  model_name: garystafford/wav2vec2-deepfake-voice-detector
+  fake_labels: ["fake", "spoof", "spoofed"]
+  real_labels: ["real", "bonafide", "genuine"]
+  fake_label_id: 1
+  max_test_samples: null

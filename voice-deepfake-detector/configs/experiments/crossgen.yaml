@@ -1,0 +1,8 @@
+extends: ../base.yaml
+
+experiment:
+  name: exp002_crossgen_holdout
+  split: crossgen
+
+cache:
+  enabled: true

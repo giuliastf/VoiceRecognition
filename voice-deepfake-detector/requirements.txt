@@ -1,0 +1,13 @@
+torch
+torchaudio
+transformers
+joblib
+datasets
+numpy
+pandas
+scikit-learn
+tqdm
+matplotlib
+pyyaml
+soundfile
+sounddevice

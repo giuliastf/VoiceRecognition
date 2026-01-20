@@ -1,0 +1,20 @@
+extends: ../base.yaml
+
+experiment:
+  name: exp005_overnight_baseline_v2
+  split: baseline
+
+cache:
+  enabled: true
+
+augment:
+  enabled: false
+
+training:
+  batch_size: 32
+  epochs: 12
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  max_train_samples_per_epoch: 60000
+  max_val_samples: 12000
+  early_stopping_patience: 3
